@@ -1,0 +1,7 @@
+s/"([^\\"]|\\[^"]|[^\\]?(\\\\)*\\")*"/<span class="quote">&<\/span>/g
+s/'(\\[\\abfnrt'"]|[^'\\]|\\x[0-9a-fA-F]{2}|&(amp|lt|gt);)'/<span class="character">&<\/span>/g
+s/\/\/.*/<span class="comment">&<\/span>/g
+s/\/\*.?([^\*]|[^*]\/)*\*\//<span class="comment">&<\/span>/g
+s/^#[ \t]*[[:alnum:]]*/<span class="preprocessor">&<\/span>/g
+s/(^|[^A-Za-z0-9_])(break|case|catch|class|const_cast|const|continue|default|delete|do|double|dynamic_cast|else|enum|explicit|extern|false|for|friend|goto|if|inline|mutable|namespace|new|operator|private|protected|public|register|reinterpret_cast|return|sizeof|static_cast|static|struct|switch|template|this|throw|try|typedef|typeid|typename|union|using|virtual|void|volatile|while)($|[^A-Za-z0-9_=])/\1<span class="keyword">\2<\/span>\3/g
+p
