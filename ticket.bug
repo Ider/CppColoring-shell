@@ -1,4 +1,31 @@
 Bug List
 
 #1
-If keyword, built-in type, standard library are near by with only one characters, the second one would not be matched as the first one comsumed that character, the second one could not get match.
+If keyword, built-in type, standard library, number are near by with only one characters, the second one would not be matched as the first one comsumed that character, the second one could not get match.
+The reason is that awk does not support \b, I have to use [^A-Za-z0-9_] instead, and it comsumes a character.
+
+Eample:
+default:break; #the 'break' would not be matched
+
+Update:
+I have fix some by combine often used nearby keywords together, like:
+else if
+using namespace
+
+default:break;  is not appear often, so I did not add this combination.
+Some other
+
+
+#2
+Some invalid numbers would also be matched
+
+Example:
+0789    #octal number could not have digit 8 or 9
+21uL    #invalid suffix combination
+7.0LL   #LL suffix could only appear after integer constant
+0x10.   #Hexadecimal float number is not valid
+0x0.e7 #Hexadecimal float number is not valid
+
+Update:
+The coloring utility is not compiler, those invalid number are all errors. So it would not appear in runnable C++ program.
+The number would match all valid numbers, so I did not fix this problem
