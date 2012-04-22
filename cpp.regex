@@ -1,0 +1,34 @@
+#This is the file for the regular expression patterns and substitutions for 
+#C++ Syntax, which will be used in sed utility for replacement.
+
+#Each line would contain a pair of pattern and substitution. No spaces before
+#and after each line, otherwise they will be treated as part of pattern
+
+#Sometimes the order of the pairs does matter
+
+#Pattern and substitution should be seperated by tabs and/or blank spaces.
+#If the seperator only contains blank spaces, it should be at least two.
+#Which means, it should match with / {2,}| *\t[ \t]*/
+
+#Any lines begin with # will be ignored as comment
+#Any empty lines which only contains tabs and/or blank spaces will be ignored
+
+
+
+#Quotation  Lazy mode: ""|".*?[^\\](\\\\)*"
+"([^\\"]|\\[^"]|[^\\]?(\\\\)*\\")*"        <span class="quote">&</span>
+
+#Character      The last three is used to quote the encoded characters
+'(\\[\\abfnrt'"]|[^'\\]|\\x[0-9a-fA-F]{2}|&(amp|lt|gt);)'     <span class="character">&</span>
+
+#C++ style comment
+//.*        <span class="comment">&</span>
+#C style comment. Lazy mode: /\*.*?\*/
+/\*.?([^\*]|[^*]/)*\*/       <span class="comment">&</span>
+
+#Preprocessor directives
+^#[ \t]*[[:alnum:]]*        <span class="preprocessor">&</span>
+
+#Keyword    The last = is used to exclude "class=" in substitutions
+(^|[^A-Za-z0-9_])(break|case|catch|class|const_cast|const|continue|default|delete|do|double|dynamic_cast|else|enum|explicit|extern|false|for|friend|goto|if|inline|mutable|namespace|new|operator|private|protected|public|register|reinterpret_cast|return|sizeof|static_cast|static|struct|switch|template|this|throw|try|typedef|typeid|typename|union|using|virtual|void|volatile|while)($|[^A-Za-z0-9_=])      \1<span class="keyword">\2</span>\3
+#built-in type
