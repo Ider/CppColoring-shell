@@ -1,0 +1,4 @@
+Bug List
+
+#1
+If keyword, built-in type, standard library are near by with only one characters, the second one would not be matched as the first one comsumed that character, the second one could not get match.
