@@ -1,31 +1,38 @@
 #This awk program file is used to generate sed substitution commands
 
 BEGIN{
-    regexfile="cpp.regex";
-    sedfile="-";
+    #r = regex file that read from
+    #s = sed file that output to
 
-    if(regexfile == ""){
-        system("echo Please use \"-v regexfile={filename}\" option \to set regexfile variable >&2");
+    if(r == ""){
+        system("echo  Regex file is not specified. Please use \\\"-v r={filename}\\\"" \
+            " option to set file that regex patterns read from. >&2");
+        exit;
+    }
+
+    if(s== ""){
+        system("echo  Sed file is not specified. Please use \\\"-v s={filename}\\\"" \
+            " option to set file that sed actions write to. >&2");
         exit;
     }
 
     #Load patterns
     FS=" {2,}| *\t[ \t]*";
     patternSize=0;
-    while(getline < regexfile > 0){
+    while(getline < r > 0){
         #ignore comments and empty lines
         if ($0 ~ /^[ \t]*(#|$)/) continue;
 
         gsub(/\//, "\\/", $1);
         gsub(/\//, "\\/", $2);
-        print "s/"$1"/"$2"/g";
+        print "s/"$1"/"$2"/g" > s;
         patternSize=1;
     }
     #output function
-    print "p";
+    print "p" > s;
 
-    close(regexfile);
-    close(sedtmpfile);
+    close(r);
+    close(s);
 
     if(patternSize <= 0){
         system("echo No pattern loaded, please use other file >&2")
@@ -34,11 +41,11 @@ BEGIN{
 
     FS="[ \t]+"
 
-    exit;
+    #exit;
 } #end of BEGIN
 
 
-#When match c style comments, make multiple lines to one line
+#When match c style comments, concatenate multiple lines to one line
 /\/\*/{
     while($0 !~ /\*\//)
     {
@@ -49,7 +56,7 @@ BEGIN{
     }
 }
 
-#When match multiple line indicator, make multiple lines to one line
+#When match multiple line indicator, concatenate multiple lines to one line
 /\\[ \t]*$/{
     while($0 ~ /\\[ \t]*$/)
     {
