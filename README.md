@@ -40,15 +40,16 @@ It's easier to manage regex pattern and substitution. And much easier to manipul
 	> C standard libary, begin with c, e.g. &lt;cmath&gt;; or end with .h e.g., &lt;stdio.h&gt;
 
 * Right Value
-	* Number
+
+	* Number   
 		> Hexadecimal format   
 		> Exponential format   
 		> Suffix for number: U, L, LL, F 
 
-	* Boolean
+	* Boolean   
 		> true, false
 
-	* Character
+	* Character   
 		> Character inside of ''  
 		> Escape character   
 		> Presented in hexadecimal value
