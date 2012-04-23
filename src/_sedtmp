@@ -6,7 +6,7 @@ s/(^|[^A-Za-z0-9_])(break|case|catch|class|const_cast|const|continue|default|del
 s/(^|[^A-Za-z0-9_])(unsigned[ \t]+|signed[ \t]+)?(bool|char|double|float|int|short[ \t]+int|short|long[ \t]+long[ \t]+int|long[ \t]+long|long|size_t)($|[^A-Za-z0-9_])/\1<span class="builtintype">\2\3<\/span>\4/g
 s/(^|[^A-Za-z0-9_])(std[ \t]*::[ \t]*)?(i?o?stream|[io]?fstream|[io]?stringstream|string|vector|list|deque|list|stack|priority_queue|queue|bitset|multiset|set|multimap|map|cin|cout|clog|endl)($|[^A-Za-z0-9_])/\1<span class="stdlib">\2\3<\/span>\4/g
 s/([^A-Za-z0-9_ \t])(cassert|cctype|cerrno|cfloat|ciso646|climits|clocale|cmath|csetjmp|csignal|cstdarg|cstddef|cstdio|cstdlib|cstring|ctime|assert.h|type.h|errno.h|float.h|iso646.h|limits.h|loale.h|math.h|setjmp.h|signal.h|stdarg.h|stddef.h|stdio.h|stdlib.h|string.h|time.h)([^A-Za-z0-9_ \t])/\1<span class="stdlib">\2<\/span>\3/g
-s/([^A-Za-z0-9_])(0[Xx][0-9A-Fa-f]+|[0-9]+\.?[0-9]*|[0-9]*\.[0-9]+)((e[+-]?[0-9]+)?[LlUuFf]?[Ll]?)([^A-Za-z0-9_])/\1<span class="number">\2\3<\/span>\5/g
+s/([^A-Za-z0-9_])(0[Xx][0-9A-Fa-f]+|[0-9]+\.?[0-9]*|[0-9]*\.[0-9]+)((e[+-]?[0-9]+)?[Uu]?[LlFf]?[Ll]?[Uu]?)([^A-Za-z0-9_])/\1<span class="number">\2\3<\/span>\5/g
 s/([^A-Za-z0-9_])(false|true)([^A-Za-z0-9_])/\1<span class="boolean">\2<\/span>\3/g
 s/'(\\[\\abfnrt'"]|[^'\\]|\\x[0-9a-fA-F]{2}|&(amp|lt|gt);)'/<span class="character">&<\/span>/g
 p

@@ -40,7 +40,7 @@
 
 #rvalue - right value
 #Number
-([^A-Za-z0-9_])(0[Xx][0-9A-Fa-f]+|[0-9]+\.?[0-9]*|[0-9]*\.[0-9]+)((e[+-]?[0-9]+)?[LlUuFf]?[Ll]?)([^A-Za-z0-9_])       \1<span class="number">\2\3</span>\5
+([^A-Za-z0-9_])(0[Xx][0-9A-Fa-f]+|[0-9]+\.?[0-9]*|[0-9]*\.[0-9]+)((e[+-]?[0-9]+)?[Uu]?[LlFf]?[Ll]?[Uu]?)([^A-Za-z0-9_])       \1<span class="number">\2\3</span>\5
 #Boolean value
 ([^A-Za-z0-9_])(false|true)([^A-Za-z0-9_])      \1<span class="boolean">\2</span>\3
 #Character      The last three is used to quote the encoded characters

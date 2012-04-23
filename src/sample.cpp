@@ -1,16 +1,33 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <stdio.h>
+#include <cmath>
 
 using namespace std;
+
+//Following is not valid C++ code
+//Shell does not support lazy mode for repeate match,
+//So, it used to see if my lazy-way works for the comment and quotations match
+
 /* c style comment  */ haha /**/ xixi /*   */ en /*/*/ append /* haha */ what? /* haha */
+
+//For quotations, it also has escape issue. Hence following is used to check if quotation is correct
 "124" asdf "" haha "asd\"" asd "\" asdf" gewg "\\" fef "\\\\\"" qertq "asdfas\\\\\"" qwetqwe  "asdfas\\\\\" fa"
 
 //path: an absolute path for a file (Unix-style)
-string SimplifyPath(string path) 
+std::string SimplifyPath(string path) 
 {
+    int x =19L;
+    int t =90u;
+    float f = 10.e39U;
+    float z = .90e-10f;
+    int o = 07723u;
+    int h = 0X8FeaL;
+    bool truevaule= true;
+    bool falsevalue = false;
     path.push_back('/');//make sure the last path would be push to stack
-    stack<size_t> iStack; //index of each directory in the path
+    std  :: stack<size_t> iStack; //index of each directory in the path
     size_t pos = 0; //position for next directory to append
     iStack.push(pos);
 
@@ -37,7 +54,7 @@ string SimplifyPath(string path)
                 case '.':
                     if (path[dir+3] != '/') //hiden file
                         iStack.push(pos);
-                    else
+                    else if(true)
                     {
                         //back to the position of previous directory
                         if(iStack.size() > 1) iStack.pop();
@@ -57,6 +74,10 @@ string SimplifyPath(string path)
     
     path.erase(pos);
     return path;
+
+    return true;
+    return  false;
+    return 0;
 }
 
 int main(int argc, char** argv)
