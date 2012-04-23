@@ -21,10 +21,11 @@ Some invalid numbers would also be matched
 
 Example:
 0789    #octal number could not have digit 8 or 9
+7f      #invalid suffix for integer
 21uL    #invalid suffix combination
 7.0LL   #LL suffix could only appear after integer constant
 0x10.   #Hexadecimal float number is not valid
-0x0.e7 #Hexadecimal float number is not valid
+0x0.e7  #Hexadecimal float number is not valid
 
 Update:
 The coloring utility is not compiler, those invalid number are all errors. So it would not appear in runnable C++ program.
