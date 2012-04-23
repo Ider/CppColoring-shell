@@ -24,7 +24,7 @@
 #C++ style comment
 //.*        <span class="comment">&</span>
 #C style comment. Lazy mode: /\*.*?\*/
-/\*.?([^\*]|[^*]/)*\*/       <span class="comment">&</span>
+/\*.?([^/]|[^*]/)*\*/       <span class="comment">&</span>
 
 #Preprocessor directives
 ^[ \t]*#[ \t]*[[:alnum:]]*        <span class="preprocessor">&</span>

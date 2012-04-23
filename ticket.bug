@@ -13,7 +13,7 @@ else if
 using namespace
 
 default:break;  is not appear often, so I did not add this combination.
-Some other
+Some other such issue is not come to my mind so far, I would try to fix them when I see them.
 
 
 #2
@@ -30,3 +30,15 @@ Example:
 Update:
 The coloring utility is not compiler, those invalid number are all errors. So it would not appear in runnable C++ program.
 The number would match all valid numbers, so I did not fix this problem
+
+
+#3
+When asterisk is inside of C style comment, the comment would not be matched.
+
+Example:
+/* A * insded */    #This comment would not be matched, as my pattern exclude all asterisk.
+
+Update:
+Previous pattern: /\*.?([^\*]|[^*]/)*\*/ 
+Current pattern: /\*.?([^/]|[^*]/)*\*/ 
+I should except slash not asterisk, unless the slash is follwoing any charater that is not asterisk.
