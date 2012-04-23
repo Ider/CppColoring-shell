@@ -21,7 +21,7 @@ This file will be removed in future
 htmlencode.sed
 ---
 This sed action should be done before any other substitutions, it merely encodes following three characters:
-    
+
     &	=>	&amp;   
     >	=>	&gt;   
     <	=>	&lt;   
