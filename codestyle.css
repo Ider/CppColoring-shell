@@ -1,10 +1,5 @@
 /* Codes */
 
-.code_container_ider {
-
-}
-
-
 
 code
 {
@@ -17,27 +12,22 @@ code
     margin-bottom:1px
 }
 
-code.quote_statement, code .quote_statement{color:#0000FF} /*compatibility for previous style*/
-code.snippet, code .snippet{color:#0000FF}  
-
 /* 
     using '>' to let only the directly tags have thoes style
     tags nested in other would not be affected by the style
 */
-code.character, code > .character{color:#990099}
-code.comment, code > .comment{color:#009900}
-code.function, code > .function{color:#990099}
-code.keyword, code > .keyword{color:#0000FF}
-code.number, code > .number{color:#990000}
-code.preprocessor, code > .preprocessor{color:#FF0000}
-code.quote, code > .quote{color:#990000}
+code.quote, code > .quote{color:#990000;}
+code.comment, code > .comment{color:#009900;}
 
-code.stdandarlibrary, code  > .stdandarlibrary{color:#0099FF}
+code.preprocessor, code > .preprocessor{color:#CC6600;}
 
+code.character, code > .character{color:#990099;}
+code.number, code > .number{color:#0099FF;}
+code.boolean, code > .boolean{color:#0099FF;}
 
-/* Test Area*/
-.color1 {background-color:#6600ff;}
-.color2 {background-color:#9900ff;}
+code.function, code > .function{color:#FF0000;}
 
-.color3 {background-color:#ff6600;}
-.color4 {background-color:#ff3300;}
+code.keyword, code > .keyword{color:#0000FF;}
+code.builtintype, code  > .builtintype{color:#FF00FF; font-style:italic;}
+code.stdlib, code  > .stdlib{color:#FF6666;}
+
