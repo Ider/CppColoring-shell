@@ -45,4 +45,15 @@ Current pattern: /\*.?([^/]|[^*]/)*\*/
 I should except slash not asterisk, unless the slash is follwoing any charater that is not asterisk.
 
 
+#4
+Order does matter. Because of the pattern order, some part did not match correctly.
+
+Example:
+'0'         #Pattern match number first, which makes this not a character
+<string.h>  #Pattern match C++ standard library first, which makes it ignore .h
+
+Update:
+Reorder the pattern:
+Match character before number
+Match C standard library before C++ standard library
 
