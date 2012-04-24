@@ -10,9 +10,9 @@ So I start this project to make C++ Syntax highlight coloring under my requireme
 
 
 This is **shell script** version of the C++ coloring.   
-After I learned shell script, [**awk**](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/Manpages/man1/awk.1.html) and [**sed**](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/Manpages/man1/sed.1.html) command, I find it is much better than Javascript to coloring the C++ files to with HTML tags and CSS properties.   
+After I learned shell script, [**awk**](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/Manpages/man1/awk.1.html) and [**sed**](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/Manpages/man1/sed.1.html) command, I find it is much better than Javascript to coloring the C++ files with HTML tags and CSS properties.   
 
-It's easier to manage regex patterns and substitutions. And it is much easier to manipulate multiple files.
+It's easier to manage regex patterns and substitutions. And easier to manipulate multiple files.
 
 ##Highlighted Part
 
@@ -28,29 +28,32 @@ It's easier to manage regex patterns and substitutions. And it is much easier to
 
 * Keyword
 	> [C++ keyword list](http://en.cppreference.com/w/cpp/keyword)   
-	> Not all of the list are keywords, I treat some as Built-in type and boolean value
+	> Not all in the list are matched as keyword, I treat some as built-in type and boolean value
 
 * Built-in Number Type
 	> signed, unsigned   
-	> int, long, long long   
+	> bool, char   
+	> short, int, long, long long   
 	> float, double
+	> size_t
 
 * Standard Library
 	> C++ standard library: string, io stream, container   
-	> C standard library, begin with c, e.g. &lt;cmath&gt;; or end with .h e.g., &lt;stdio.h&gt;
+	> C standard library, begin with c, e.g. &lt;cmath&gt;; or end with .h, e.g. &lt;stdio.h&gt;
 
 * Right Value
-> * Number  
-> >  Hexadecimal format   
-> >  Exponential format   
-> >  Suffix for number: U, L, LL, F   
->
-> * Boolean   
-> > true, false   
-> * Character
-> > Character inside of ''  
-> > Escape character   
-> > Presented in hexadecimal value
+	> * Number  
+	> > Hexadecimal format   
+	> > Exponential format   
+	> > Suffix for number: U, L, LL, F   
+	>
+	> * Boolean   
+	> > true, false
+	>    
+	> * Character
+	> > Character inside of ''  
+	> > Escape character   
+	> > Presented in hexadecimal value
 		
 		
 ##CSS Trick
