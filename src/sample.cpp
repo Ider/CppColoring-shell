@@ -10,7 +10,7 @@ using namespace std;
 //Shell does not support lazy mode for repeate match,
 //So, it used to see if my lazy-way works for the comment and quotations match
 
-/* c style comment  */ haha /**/ xixi /*   */ en /*/*/ append /* haha */ what? /* haha */
+/* c style comment  */ haha /**/ xixi /*   */ en /*/*/ append /* haha */ what? /* haha */ double /*haha *    */
 
 //For quotations, it also has escape issue. Hence following is used to check if quotation is correct
 "124" asdf "" haha "asd\"" asd "\" asdf" gewg "\\" fef "\\\\\"" qertq "asdfas\\\\\"" qwetqwe  "asdfas\\\\\" fa"
@@ -88,13 +88,13 @@ int main(int argc, char** argv)
     cout << s << " => " << SimplifyPath(s) << endl;
     s = "/home/of/foo/../../bar/../../is/./here/.";
     cout << s << " => " << SimplifyPath(s) << endl;
-/**
+/*
  
  /home/../.. => /
  /a/./.b/../../c/ => /c
  /home/of/foo/../../bar/../../is/./here/. => /is/here
 
- **/
+ */
     
     
     return 0;
