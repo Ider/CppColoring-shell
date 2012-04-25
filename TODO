@@ -14,3 +14,30 @@
 
 
 奇偶行不同背景颜色(even, odd)，高亮鼠标所在行(hover)
+
+
+
+确认格式
+<table>
+    <tr>
+        <td class="line_number">
+            <span>{行号}</span>
+            <span>{行号}</span>
+        </td>
+        <td width="100%">
+            <div class="codes">
+                <pre><code>
+                    <div id="line_%d" class="line">{代码}</div>
+                    <div id="line_%d" class="line">{代码}</div>
+                </code></pre>
+            </div>
+        </td>
+    <tr>
+</table>
+这种格式的好处在于codes可以设置成水平浮动：overflow-y:auto; 而行号却不会随着滚动
+
+
+使用CSS的Even Odd 子选择器来设置隔行背景
+http://www.w3.org/Style/Examples/007/evenodd.en.html
+
+这样行号的html代码就可以在.sh里面生成，不用移到.awk中了。而且也省了每行设置特定的的class
