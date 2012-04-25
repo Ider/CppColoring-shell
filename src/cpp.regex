@@ -10,8 +10,8 @@
 #If the seperator only contains blank spaces, it should be at least two.
 #Which means, it should match with / {2,}| *\t[ \t]*/
 
-#Any lines begin with # will be ignored as comment
-#Any empty lines which only contains tabs and/or blank spaces will be ignored
+#Any lines begining with # will be ignored as comment
+#Any empty lines containing only tabs and/or blank spaces will be ignored
 
 #Since & is used for backreference of whole matched string, if & appears in substitution,
 #it should use \ to escape it.
