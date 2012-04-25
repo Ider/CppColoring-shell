@@ -1,4 +1,107 @@
-<html> <head> <title>sample - Ider</title> <meta name="keywords" content="C, C++, algorithm" > <meta name="author" content="Ider Zheng" > <meta name="email" content="ider.cs@gmail.com" > <link rel="stylesheet" type="text/css" href="codestyle.css"> </head> <body> <div><pre><code>
+<html> <head> <title>sample - Ider</title> <meta name="keywords" content="C, C++, algorithm" > <meta name="author" content="Ider Zheng" > <meta name="email" content="ider.cs@gmail.com" > <link rel="stylesheet" type="text/css" href="codestyle.css"> </head> <body>
+<div class="codes"><table><tr><td><div class="line_numbers"><pre><code>
+<span id="line_1" class="line_number">1</span>
+<span id="line_2" class="line_number">2</span>
+<span id="line_3" class="line_number">3</span>
+<span id="line_4" class="line_number">4</span>
+<span id="line_5" class="line_number">5</span>
+<span id="line_6" class="line_number">6</span>
+<span id="line_7" class="line_number">7</span>
+<span id="line_8" class="line_number">8</span>
+<span id="line_9" class="line_number">9</span>
+<span id="line_10" class="line_number">10</span>
+<span id="line_11" class="line_number">11</span>
+<span id="line_12" class="line_number">12</span>
+<span id="line_13" class="line_number">13</span>
+<span id="line_14" class="line_number">14</span>
+<span id="line_15" class="line_number">15</span>
+<span id="line_16" class="line_number">16</span>
+<span id="line_17" class="line_number">17</span>
+<span id="line_18" class="line_number">18</span>
+<span id="line_19" class="line_number">19</span>
+<span id="line_20" class="line_number">20</span>
+<span id="line_21" class="line_number">21</span>
+<span id="line_22" class="line_number">22</span>
+<span id="line_23" class="line_number">23</span>
+<span id="line_24" class="line_number">24</span>
+<span id="line_25" class="line_number">25</span>
+<span id="line_26" class="line_number">26</span>
+<span id="line_27" class="line_number">27</span>
+<span id="line_28" class="line_number">28</span>
+<span id="line_29" class="line_number">29</span>
+<span id="line_30" class="line_number">30</span>
+<span id="line_31" class="line_number">31</span>
+<span id="line_32" class="line_number">32</span>
+<span id="line_33" class="line_number">33</span>
+<span id="line_34" class="line_number">34</span>
+<span id="line_35" class="line_number">35</span>
+<span id="line_36" class="line_number">36</span>
+<span id="line_37" class="line_number">37</span>
+<span id="line_38" class="line_number">38</span>
+<span id="line_39" class="line_number">39</span>
+<span id="line_40" class="line_number">40</span>
+<span id="line_41" class="line_number">41</span>
+<span id="line_42" class="line_number">42</span>
+<span id="line_43" class="line_number">43</span>
+<span id="line_44" class="line_number">44</span>
+<span id="line_45" class="line_number">45</span>
+<span id="line_46" class="line_number">46</span>
+<span id="line_47" class="line_number">47</span>
+<span id="line_48" class="line_number">48</span>
+<span id="line_49" class="line_number">49</span>
+<span id="line_50" class="line_number">50</span>
+<span id="line_51" class="line_number">51</span>
+<span id="line_52" class="line_number">52</span>
+<span id="line_53" class="line_number">53</span>
+<span id="line_54" class="line_number">54</span>
+<span id="line_55" class="line_number">55</span>
+<span id="line_56" class="line_number">56</span>
+<span id="line_57" class="line_number">57</span>
+<span id="line_58" class="line_number">58</span>
+<span id="line_59" class="line_number">59</span>
+<span id="line_60" class="line_number">60</span>
+<span id="line_61" class="line_number">61</span>
+<span id="line_62" class="line_number">62</span>
+<span id="line_63" class="line_number">63</span>
+<span id="line_64" class="line_number">64</span>
+<span id="line_65" class="line_number">65</span>
+<span id="line_66" class="line_number">66</span>
+<span id="line_67" class="line_number">67</span>
+<span id="line_68" class="line_number">68</span>
+<span id="line_69" class="line_number">69</span>
+<span id="line_70" class="line_number">70</span>
+<span id="line_71" class="line_number">71</span>
+<span id="line_72" class="line_number">72</span>
+<span id="line_73" class="line_number">73</span>
+<span id="line_74" class="line_number">74</span>
+<span id="line_75" class="line_number">75</span>
+<span id="line_76" class="line_number">76</span>
+<span id="line_77" class="line_number">77</span>
+<span id="line_78" class="line_number">78</span>
+<span id="line_79" class="line_number">79</span>
+<span id="line_80" class="line_number">80</span>
+<span id="line_81" class="line_number">81</span>
+<span id="line_82" class="line_number">82</span>
+<span id="line_83" class="line_number">83</span>
+<span id="line_84" class="line_number">84</span>
+<span id="line_85" class="line_number">85</span>
+<span id="line_86" class="line_number">86</span>
+<span id="line_87" class="line_number">87</span>
+<span id="line_88" class="line_number">88</span>
+<span id="line_89" class="line_number">89</span>
+<span id="line_90" class="line_number">90</span>
+<span id="line_91" class="line_number">91</span>
+<span id="line_92" class="line_number">92</span>
+<span id="line_93" class="line_number">93</span>
+<span id="line_94" class="line_number">94</span>
+<span id="line_95" class="line_number">95</span>
+<span id="line_96" class="line_number">96</span>
+<span id="line_97" class="line_number">97</span>
+<span id="line_98" class="line_number">98</span>
+<span id="line_99" class="line_number">99</span>
+<span id="line_100" class="line_number">100</span>
+<span id="line_101" class="line_number">101</span>
+</code></pre></div></td><td width="100%"><div class="code_content"><pre><code>
 <span class="preprocessor">#include</span> &lt;<span class="stdlib">iostream</span>&gt;
 <span class="preprocessor">#include</span> &lt;<span class="stdlib">vector</span>&gt;
 <span class="preprocessor">#include</span> &lt;<span class="stdlib">stack</span>&gt;
@@ -94,4 +197,5 @@
     
     <span class="keyword">return</span> <span class="number">0</span>;
 }
-</code> </pre> </div> <div> <a class="link_text" href="sample.cpp">View Program Text</a> <br/> <br/> <br/> <img class="test_status" src="sample.jpg" alt="Test Status"> </div> </body> </html>
+</code></pre></div></td></tr></table></div>
+</tr></table> <div> <a class="link_text" href="sample.cpp">View Program Text</a> <br/> <br/> <br/> <img class="test_status" src="sample.jpg" alt="Test Status"> </div> </body> </html>

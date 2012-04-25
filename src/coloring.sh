@@ -10,6 +10,12 @@ sedfile="coloring.sed"
 regexfile="cpp.regex"
 htmlencode="htmlencode.sed"
 
+function LineNumbers()
+{
+    for i in `seq 1 $1`; do
+        echo '<span id="line_'$i'" class="line_number">'$i'</span>'
+    done
+}
 
 tmpfile[0]=".encoded$"  #encoded temp file
 tmpfile[1]=".body$"     #preprocessed body
@@ -29,13 +35,14 @@ files=$(ls $1)
 for file in $files; do
     
     file=${file##*/} #remove path info
+    filename=${file%.*} #remove file extension
+    file=$directory$file #concatenate file with directory
 
-    if [[ -f $directory$file ]]; then
+if [[ -f $file ]]; then
 
-#file="sample.cpp"
-filename=${file%.*} #remove file extension
-file=$directory$file #concatenate file with directory
+
 htmlfile=$directory$filename".html"
+
 
 header="<html>
     <head>
@@ -45,13 +52,9 @@ header="<html>
         <meta name="email" content="ider.cs@gmail.com" >
         <link rel="stylesheet" type="text/css" href="codestyle.css">
     </head>
-    <body>
-     
-    <div><pre><code>'
+    <body>'
 
-bottom='</code>
-            </pre>
-        </div>
+bottom='</tr></table>
     <div>
         <a class="link_text" href="'$filename'.cpp">View Program Text</a>
         <br/>
@@ -66,18 +69,29 @@ bottom='</code>
 sed -n -E -f $htmlencode $file | cat > ${tmpfile[0]}
 
 #create sed substitution actions
-awk -f coloring.awk -v s=$sedfile -v r=$regexfile ${tmpfile[0]} > ${tmpfile[1]};
+awk -f coloring.awk -v s=$sedfile -v r=$regexfile ${tmpfile[0]} > ${tmpfile[1]}
 
 #append header
-echo $header > $htmlfile;
+echo $header > $htmlfile
+
+echo '<div class="codes"><table><tr><td><div class="line_numbers"><pre><code>' >> $htmlfile
+#append line numbers
+#wc count the number of newline mark, so add 1 to be real line number
+LineNumbers $((`wc -l < $file` + 1)) >> $htmlfile
+
+echo '</code></pre></div></td><td width="100%"><div class="code_content"><pre><code>' >> $htmlfile
 #append content
 sed -n -E -f $sedfile ${tmpfile[1]} >> $htmlfile
+
+echo '</code></pre></div></td></tr></table></div>' >> $htmlfile
+
 #append bottom
 echo $bottom >> $htmlfile
 
 echo "Done coloring for: "$file;
 hastmp=1
-    fi
+    
+fi
     
 done
 

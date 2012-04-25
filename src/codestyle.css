@@ -3,7 +3,7 @@
 
 code
 {
-    padding: 2px 20px;
+    padding: 2px 5px 20px 5px;
     background-color: #F5F5F5;
     border: 1px solid #CCCCCC;
     font-family: Courier New;
@@ -11,6 +11,10 @@ code
     width:auto;
     margin-bottom:1px
 }
+
+.codes table tr td{ vertical-align: top; }
+
+.line_numbers{ text-align: right;}
 
 /* 
     using '>' to let only the directly tags have thoes style
