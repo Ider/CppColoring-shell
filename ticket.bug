@@ -57,3 +57,10 @@ Reorder the pattern:
 Match character before number
 Match C standard library before C++ standard library
 
+#5
+Line number not even with codes, when code file has empty line(s) at the end of file.
+
+Update:
+Not figure out how does it happen, maybe it is because the padding mixed with last empty line.
+I think this would be fix when I wraped each lines with <div> for line highlight.
+
