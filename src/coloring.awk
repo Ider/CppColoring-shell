@@ -28,6 +28,11 @@ BEGIN{
         print "s/"$1"/"$2"/g" > s;
         patternSize=1;
     }
+
+    # print "s/<br \\/>/<\\/span><span class=\"code\">/" > s;
+    # print "s/^/<span class=\"code\">/" > s;
+    # print "s/$/<\\/span>/" > s;
+
     #output function
     print "p" > s;
 
@@ -68,3 +73,8 @@ BEGIN{
 }
 
 { print $0;}
+
+
+END{
+
+}
